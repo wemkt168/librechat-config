@@ -34,7 +34,7 @@ app.get("/config", async (req, res) => {
       ? response.data
       : Buffer.from(response.data.content, "base64").toString("utf8");
 
-    res.setHeader("Content-Type", "text/plain; charset=utf-8");
+    res.setHeader("Content-Type", "application/x-yaml; charset=utf-8");
     res.status(200).send(yamlText);
   } catch (error) {
     console.error("Error fetching config from GitHub:", error.response?.status, error.response?.data || error.message);
