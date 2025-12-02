@@ -59,7 +59,7 @@ modelSpecs:
     - name: "Chat · GPT-5 Chat Latest · OpenAI"
       label: "GPT-5 Chat Latest - 文字理解強，適合多種聊天任務"
       iconURL: "openai"
-      description: "OpenAI GPT-5 Chat Latest，文字理解強，適合多種聊天任務，經由 AIMLAPI"
+      description: "OpenAI GPT-5 Chat Latest，文字理解強，適合多種聊天任務"
       default: true
       preset:
         endpoint: "AIMLAPI"
@@ -68,7 +68,7 @@ modelSpecs:
     - name: "Chat · O3 · OpenAI"
       label: "O3 - 兼顧推理和程式編寫"
       iconURL: "openai"
-      description: "OpenAI O3，兼顧推理和程式編寫，經由 AIMLAPI"
+      description: "OpenAI O3，兼顧推理和程式編寫"
       preset:
         endpoint: "AIMLAPI"
         model: "openai/o3"
@@ -76,7 +76,7 @@ modelSpecs:
     - name: "Chat · GPT-4.1 · OpenAI"
       label: "GPT-4.1 - 穩定菜單，文字對話專家"
       iconURL: "openai"
-      description: "OpenAI GPT-4.1，穩定菜單，文字對話專家，經由 AIMLAPI"
+      description: "OpenAI GPT-4.1，穩定菜單，文字對話專家"
       preset:
         endpoint: "AIMLAPI"
         model: "openai/gpt-4.1"
@@ -85,7 +85,7 @@ modelSpecs:
     - name: "Chat · Claude Opus 4.5 · Anthropic"
       label: "Claude Opus 4.5 - 深度理解與多步推理優秀"
       iconURL: "anthropic"
-      description: "Anthropic Claude Opus 4.5，深度理解與多步推理優秀，經由 AIMLAPI"
+      description: "Anthropic Claude Opus 4.5，深度理解與多步推理優秀"
       preset:
         endpoint: "AIMLAPI"
         model: "anthropic/claude-opus-4.5"
@@ -93,7 +93,7 @@ modelSpecs:
     - name: "Chat · Claude Opus 4.1 · Anthropic"
       label: "Claude Opus 4.1 - 智慧平衡，表達自然流暢"
       iconURL: "anthropic"
-      description: "Anthropic Claude Opus 4.1，智慧平衡，表達自然流暢，經由 AIMLAPI"
+      description: "Anthropic Claude Opus 4.1，智慧平衡，表達自然流暢"
       preset:
         endpoint: "AIMLAPI"
         model: "anthropic/claude-opus-4.1"
@@ -101,7 +101,7 @@ modelSpecs:
     - name: "Chat · Claude Sonnet 4.1 · Anthropic"
       label: "Claude Sonnet 4.1 - 速度快，輕量資源友好"
       iconURL: "anthropic"
-      description: "Anthropic Claude Sonnet 4.1，速度快，輕量資源友好，經由 AIMLAPI"
+      description: "Anthropic Claude Sonnet 4.1，速度快，輕量資源友好"
       preset:
         endpoint: "AIMLAPI"
         model: "anthropic/claude-sonnet-4.1"
@@ -110,7 +110,7 @@ modelSpecs:
     - name: "Chat · Gemini 2.5 Pro Exp · Google"
       label: "Gemini 2.5 Pro Exp - 文字圖像皆懂，可接受圖片輸入並生成相關文字"
       iconURL: "google"
-      description: "Google Gemini 2.5 Pro Exp，文字圖像皆懂，可接受圖片輸入並生成相關文字，經由 AIMLAPI"
+      description: "Google Gemini 2.5 Pro Exp，文字圖像皆懂，可接受圖片輸入並生成相關文字"
       preset:
         endpoint: "AIMLAPI"
         model: "google/gemini-2.5-pro-exp"
@@ -118,7 +118,7 @@ modelSpecs:
     - name: "Chat · Gemini 2.5 Flash · Google"
       label: "Gemini 2.5 Flash - 快速回應，適合即時對話"
       iconURL: "google"
-      description: "Google Gemini 2.5 Flash，快速回應，適合即時對話，經由 AIMLAPI"
+      description: "Google Gemini 2.5 Flash，快速回應，適合即時對話"
       preset:
         endpoint: "AIMLAPI"
         model: "google/gemini-2.5-flash"
@@ -126,7 +126,7 @@ modelSpecs:
     - name: "Chat · Gemini 3 Pro Image Preview · Google"
       label: "Gemini 3 Pro Image Preview - 文圖影音全通，支持圖片輸入，自動產生描述及提示詞"
       iconURL: "google"
-      description: "Google Gemini 3 Pro Image Preview，文圖影音全通，支持圖片輸入，自動產生描述及提示詞，經由 AIMLAPI"
+      description: "Google Gemini 3 Pro Image Preview，文圖影音全通，支持圖片輸入，自動產生描述及提示詞"
       preset:
         endpoint: "AIMLAPI"
         model: "google/gemini-3-pro-image-preview"
@@ -135,7 +135,7 @@ modelSpecs:
     - name: "Chat · Grok-4 · xAI"
       label: "Grok-4 - 風格幽默，聊天生動"
       iconURL: "xai"
-      description: "xAI Grok-4，風格幽默，聊天生動，經由 AIMLAPI"
+      description: "xAI Grok-4，風格幽默，聊天生動"
       preset:
         endpoint: "AIMLAPI"
         model: "x-ai/grok-4"
@@ -143,7 +143,7 @@ modelSpecs:
     - name: "Chat · Grok-4 Fast Non-Reasoning · xAI"
       label: "Grok-4 Fast Non-Reasoning - 快速回應，效率優先"
       iconURL: "xai"
-      description: "xAI Grok-4 Fast Non-Reasoning，快速回應，效率優先，經由 AIMLAPI"
+      description: "xAI Grok-4 Fast Non-Reasoning，快速回應，效率優先"
       preset:
         endpoint: "AIMLAPI"
         model: "x-ai/grok-4-fast-non-reasoning"
@@ -152,7 +152,7 @@ modelSpecs:
     - name: "Code · O3-mini · OpenAI"
       label: "O3-mini - 小巧快速，寫程式利器"
       iconURL: "openai"
-      description: "OpenAI O3-mini，小巧快速，寫程式利器，經由 AIMLAPI"
+      description: "OpenAI O3-mini，小巧快速，寫程式利器"
       preset:
         endpoint: "AIMLAPI"
         model: "openai/o3-mini"
@@ -160,7 +160,7 @@ modelSpecs:
     - name: "Code · O3 · OpenAI"
       label: "O3 - 程式代碼高手"
       iconURL: "openai"
-      description: "OpenAI O3，程式代碼高手，經由 AIMLAPI"
+      description: "OpenAI O3，程式代碼高手"
       preset:
         endpoint: "AIMLAPI"
         model: "openai/o3"
@@ -169,7 +169,7 @@ modelSpecs:
     - name: "Code · Claude Opus 4.1 · Anthropic"
       label: "Claude Opus 4.1 - 大型項目代碼輔助專家"
       iconURL: "anthropic"
-      description: "Anthropic Claude Opus 4.1，大型項目代碼輔助專家，經由 AIMLAPI"
+      description: "Anthropic Claude Opus 4.1，大型項目代碼輔助專家"
       preset:
         endpoint: "AIMLAPI"
         model: "anthropic/claude-opus-4.1"
@@ -177,7 +177,7 @@ modelSpecs:
     - name: "Code · Claude Sonnet 4.1 · Anthropic"
       label: "Claude Sonnet 4.1 - 輕量代碼助手"
       iconURL: "anthropic"
-      description: "Anthropic Claude Sonnet 4.1，輕量代碼助手，經由 AIMLAPI"
+      description: "Anthropic Claude Sonnet 4.1，輕量代碼助手"
       preset:
         endpoint: "AIMLAPI"
         model: "anthropic/claude-sonnet-4.1"
@@ -186,7 +186,7 @@ modelSpecs:
     - name: "Code · Gemini 2.5 Pro Exp · Google"
       label: "Gemini 2.5 Pro Exp - 多語言代碼生成功能"
       iconURL: "google"
-      description: "Google Gemini 2.5 Pro Exp，多語言代碼生成功能，經由 AIMLAPI"
+      description: "Google Gemini 2.5 Pro Exp，多語言代碼生成功能"
       preset:
         endpoint: "AIMLAPI"
         model: "google/gemini-2.5-pro-exp"
@@ -195,7 +195,7 @@ modelSpecs:
     - name: "Code · Grok-4 · xAI"
       label: "Grok-4 - 代碼生成與調試"
       iconURL: "xai"
-      description: "xAI Grok-4，代碼生成與調試，經由 AIMLAPI"
+      description: "xAI Grok-4，代碼生成與調試"
       preset:
         endpoint: "AIMLAPI"
         model: "x-ai/grok-4"
@@ -204,7 +204,7 @@ modelSpecs:
     - name: "Image · Pro-Edit · Nano Banana"
       label: "Pro-Edit - 細節改圖王者"
       iconURL: "image"
-      description: "Nano Banana Pro-Edit，細節改圖王者，經由 AIMLAPI"
+      description: "Nano Banana Pro-Edit，細節改圖王者"
       preset:
         endpoint: "AIMLAPI"
         model: "nanobanana/Pro-Edit"
@@ -213,7 +213,7 @@ modelSpecs:
     - name: "Image · Pro · Nano Banana"
       label: "Pro - 真實感爆棚圖像生成"
       iconURL: "image"
-      description: "Nano Banana Pro，真實感爆棚圖像生成，經由 AIMLAPI"
+      description: "Nano Banana Pro，真實感爆棚圖像生成"
       preset:
         endpoint: "AIMLAPI"
         model: "nanobanana/Pro"
