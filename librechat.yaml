@@ -57,7 +57,7 @@ modelSpecs:
   list:
     # === Chat：OpenAI ===
     - name: "Chat · GPT-5 Chat Latest · OpenAI"
-      label: "GPT-5 Chat Latest - 文字理解強，適合多種聊天任務"
+      label: "[聊天] GPT-5 Chat Latest - 文字理解強，適合多種聊天任務"
       iconURL: "openai"
       description: "OpenAI GPT-5 Chat Latest，文字理解強，適合多種聊天任務"
       default: true
@@ -66,7 +66,7 @@ modelSpecs:
         model: "openai/gpt-5-chat-latest"
         modelLabel: "gpt-5-chat-latest"
     - name: "Chat · O3 · OpenAI"
-      label: "O3 - 兼顧推理和程式編寫"
+      label: "[聊天] O3 - 兼顧推理和程式編寫"
       iconURL: "openai"
       description: "OpenAI O3，兼顧推理和程式編寫"
       preset:
@@ -74,7 +74,7 @@ modelSpecs:
         model: "openai/o3"
         modelLabel: "o3"
     - name: "Chat · GPT-4.1 · OpenAI"
-      label: "GPT-4.1 - 穩定菜單，文字對話專家"
+      label: "[聊天] GPT-4.1 - 穩定菜單，文字對話專家"
       iconURL: "openai"
       description: "OpenAI GPT-4.1，穩定菜單，文字對話專家"
       preset:
@@ -83,7 +83,7 @@ modelSpecs:
         modelLabel: "gpt-4.1"
     # === Chat：Anthropic / Claude ===
     - name: "Chat · Claude Opus 4.5 · Anthropic"
-      label: "Claude Opus 4.5 - 深度理解與多步推理優秀"
+      label: "[聊天] Claude Opus 4.5 - 深度理解與多步推理優秀"
       iconURL: "anthropic"
       description: "Anthropic Claude Opus 4.5，深度理解與多步推理優秀"
       preset:
@@ -91,7 +91,7 @@ modelSpecs:
         model: "anthropic/claude-opus-4.5"
         modelLabel: "claude-opus-4.5"
     - name: "Chat · Claude Opus 4.1 · Anthropic"
-      label: "Claude Opus 4.1 - 智慧平衡，表達自然流暢"
+      label: "[聊天] Claude Opus 4.1 - 智慧平衡，表達自然流暢"
       iconURL: "anthropic"
       description: "Anthropic Claude Opus 4.1，智慧平衡，表達自然流暢"
       preset:
@@ -99,7 +99,7 @@ modelSpecs:
         model: "anthropic/claude-opus-4.1"
         modelLabel: "claude-opus-4.1"
     - name: "Chat · Claude Sonnet 4.1 · Anthropic"
-      label: "Claude Sonnet 4.1 - 速度快，輕量資源友好"
+      label: "[聊天] Claude Sonnet 4.1 - 速度快，輕量資源友好"
       iconURL: "anthropic"
       description: "Anthropic Claude Sonnet 4.1，速度快，輕量資源友好"
       preset:
@@ -108,7 +108,7 @@ modelSpecs:
         modelLabel: "claude-sonnet-4.1"
     # === Chat：Google / Gemini ===
     - name: "Chat · Gemini 2.5 Pro Exp · Google"
-      label: "Gemini 2.5 Pro Exp - 文字圖像皆懂，可接受圖片輸入並生成相關文字"
+      label: "[聊天] Gemini 2.5 Pro Exp - 文字圖像皆懂，可接受圖片輸入並生成相關文字"
       iconURL: "google"
       description: "Google Gemini 2.5 Pro Exp，文字圖像皆懂，可接受圖片輸入並生成相關文字"
       preset:
@@ -116,7 +116,7 @@ modelSpecs:
         model: "google/gemini-2.5-pro-exp"
         modelLabel: "gemini-2.5-pro-exp"
     - name: "Chat · Gemini 2.5 Flash · Google"
-      label: "Gemini 2.5 Flash - 快速回應，適合即時對話"
+      label: "[聊天] Gemini 2.5 Flash - 快速回應，適合即時對話"
       iconURL: "google"
       description: "Google Gemini 2.5 Flash，快速回應，適合即時對話"
       preset:
@@ -124,7 +124,7 @@ modelSpecs:
         model: "google/gemini-2.5-flash"
         modelLabel: "gemini-2.5-flash"
     - name: "Chat · Gemini 3 Pro Image Preview · Google"
-      label: "Gemini 3 Pro Image Preview - 文圖影音全通，支持圖片輸入，自動產生描述及提示詞"
+      label: "[聊天] Gemini 3 Pro Image Preview - 文圖影音全通，支持圖片輸入，自動產生描述及提示詞"
       iconURL: "google"
       description: "Google Gemini 3 Pro Image Preview，文圖影音全通，支持圖片輸入，自動產生描述及提示詞"
       preset:
@@ -133,7 +133,7 @@ modelSpecs:
         modelLabel: "gemini-3-pro-image-preview"
     # === Chat：xAI / Grok ===
     - name: "Chat · Grok-4 · xAI"
-      label: "Grok-4 - 風格幽默，聊天生動"
+      label: "[聊天] Grok-4 - 風格幽默，聊天生動"
       iconURL: "xai"
       description: "xAI Grok-4，風格幽默，聊天生動"
       preset:
@@ -141,7 +141,7 @@ modelSpecs:
         model: "x-ai/grok-4"
         modelLabel: "grok-4"
     - name: "Chat · Grok-4 Fast Non-Reasoning · xAI"
-      label: "Grok-4 Fast Non-Reasoning - 快速回應，效率優先"
+      label: "[聊天] Grok-4 Fast Non-Reasoning - 快速回應，效率優先"
       iconURL: "xai"
       description: "xAI Grok-4 Fast Non-Reasoning，快速回應，效率優先"
       preset:
@@ -150,7 +150,7 @@ modelSpecs:
         modelLabel: "grok-4-fast-non-reasoning"
     # === Code：OpenAI ===
     - name: "Code · O3-mini · OpenAI"
-      label: "O3-mini - 小巧快速，寫程式利器"
+      label: "[代碼] O3-mini - 小巧快速，寫程式利器"
       iconURL: "openai"
       description: "OpenAI O3-mini，小巧快速，寫程式利器"
       preset:
@@ -158,7 +158,7 @@ modelSpecs:
         model: "openai/o3-mini"
         modelLabel: "o3-mini"
     - name: "Code · O3 · OpenAI"
-      label: "O3 - 程式代碼高手"
+      label: "[代碼] O3 - 程式代碼高手"
       iconURL: "openai"
       description: "OpenAI O3，程式代碼高手"
       preset:
@@ -167,7 +167,7 @@ modelSpecs:
         modelLabel: "o3"
     # === Code：Anthropic / Claude ===
     - name: "Code · Claude Opus 4.1 · Anthropic"
-      label: "Claude Opus 4.1 - 大型項目代碼輔助專家"
+      label: "[代碼] Claude Opus 4.1 - 大型項目代碼輔助專家"
       iconURL: "anthropic"
       description: "Anthropic Claude Opus 4.1，大型項目代碼輔助專家"
       preset:
@@ -175,7 +175,7 @@ modelSpecs:
         model: "anthropic/claude-opus-4.1"
         modelLabel: "claude-opus-4.1"
     - name: "Code · Claude Sonnet 4.1 · Anthropic"
-      label: "Claude Sonnet 4.1 - 輕量代碼助手"
+      label: "[代碼] Claude Sonnet 4.1 - 輕量代碼助手"
       iconURL: "anthropic"
       description: "Anthropic Claude Sonnet 4.1，輕量代碼助手"
       preset:
@@ -184,7 +184,7 @@ modelSpecs:
         modelLabel: "claude-sonnet-4.1"
     # === Code：Google / Gemini ===
     - name: "Code · Gemini 2.5 Pro Exp · Google"
-      label: "Gemini 2.5 Pro Exp - 多語言代碼生成功能"
+      label: "[代碼] Gemini 2.5 Pro Exp - 多語言代碼生成功能"
       iconURL: "google"
       description: "Google Gemini 2.5 Pro Exp，多語言代碼生成功能"
       preset:
@@ -193,7 +193,7 @@ modelSpecs:
         modelLabel: "gemini-2.5-pro-exp"
     # === Code：xAI / Grok ===
     - name: "Code · Grok-4 · xAI"
-      label: "Grok-4 - 代碼生成與調試"
+      label: "[代碼] Grok-4 - 代碼生成與調試"
       iconURL: "xai"
       description: "xAI Grok-4，代碼生成與調試"
       preset:
@@ -202,7 +202,7 @@ modelSpecs:
         modelLabel: "grok-4"
     # === Image：Nano Banana ===
     - name: "Image · Pro-Edit · Nano Banana"
-      label: "Pro-Edit - 細節改圖王者"
+      label: "[圖像] Pro-Edit - 細節改圖王者"
       iconURL: "image"
       description: "Nano Banana Pro-Edit，細節改圖王者"
       preset:
@@ -211,7 +211,7 @@ modelSpecs:
         modelLabel: "pro-edit"
         imageOutput: true
     - name: "Image · Pro · Nano Banana"
-      label: "Pro - 真實感爆棚圖像生成"
+      label: "[圖像] Pro - 真實感爆棚圖像生成"
       iconURL: "image"
       description: "Nano Banana Pro，真實感爆棚圖像生成"
       preset:
