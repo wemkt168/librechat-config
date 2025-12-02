@@ -1,0 +1,25 @@
+endpoints:
+  custom:
+    - name: "AIMLAPI"
+      apiKey: "${AI_ML_API_KEY}"
+      baseURL: "https://api.aimlapi.com/v1"
+      models:
+        default: ["openai/gpt-4o-mini"]
+        fetch: false
+      titleConvo: true
+      summary: true
+      agents: true
+
+modelSpecs:
+  enforce: false
+  prioritize: true
+  list:
+    - name: "AIML GPT-4o-mini"
+      label: "AIML GPT-4o-mini"
+      iconURL: "openai"
+      description: "General chat via AIMLAPI (gpt-4o-mini)"
+      default: true
+      preset:
+        endpoint: "AIMLAPI"
+        model: "openai/gpt-4o-mini"
+        modelLabel: "GPT-4o-mini"
