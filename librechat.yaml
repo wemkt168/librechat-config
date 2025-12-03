@@ -8,6 +8,8 @@ endpoints:
       baseURL: "https://api.aimlapi.com/v1"
       models:
         default:
+          - perplexity/sonar-pro
+          - perplexity/sonar
           - gpt-5-chat-latest
           - openai/o3-2025-04-16
           - openai/gpt-4.1-2025-04-14
@@ -24,6 +26,22 @@ modelSpecs:
   enforce: false
   prioritize: true
   list:
+    - name: "Chat · Sonar Pro · Perplexity"
+      label: "[聊天] Perplexity Sonar Pro - 最新熱門，實時搜索+強大推理"
+      iconURL: "perplexity"
+      description: "Perplexity Sonar Pro，整合即時網頁搜索與強大推理能力，適合需要最新資訊與深入分析的對話"
+      preset:
+        endpoint: "AIMLAPI"
+        model: "perplexity/sonar-pro"
+        modelLabel: "sonar-pro"
+    - name: "Chat · Sonar · Perplexity"
+      label: "[聊天] Perplexity Sonar - 最熱門版，網頁資料即時檢索"
+      iconURL: "perplexity"
+      description: "Perplexity Sonar，專注即時網頁資料檢索與快速回答，適合日常查詢與資訊探索"
+      preset:
+        endpoint: "AIMLAPI"
+        model: "perplexity/sonar"
+        modelLabel: "sonar"
     - name: "Chat · GPT-5 Chat Latest · OpenAI"
       label: "[聊天] GPT-5 Chat Latest - 文字理解強，適合多種聊天任務"
       iconURL: "openai"
