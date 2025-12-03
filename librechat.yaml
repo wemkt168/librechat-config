@@ -21,6 +21,17 @@ endpoints:
           - google/gemini-3-pro-preview
           - x-ai/grok-4
           - x-ai/grok-4-fast-non-reasoning
+          # Video 系列
+          - google/veo-3.1-reference-to-video
+          - google/veo-3.1-first-last-image-to-video
+          - google/veo-3.1-first-last-image-to-video-fast
+          - google/veo-3.1-text-to-video
+          - google/veo-3.1-text-to-video-fast
+          - klingai/v2.1-master-text-to-video
+          - klingai/v2.1-master-image-to-video
+          - klingai/v2.5-turbo-pro-text-to-video
+          - bytedance/seedance-1-0-pro-t2v
+          - bytedance/seedance-1-0-pro-i2v
 
 modelSpecs:
   enforce: false
@@ -131,3 +142,84 @@ modelSpecs:
         endpoint: "AIMLAPI"
         model: "x-ai/grok-4-fast-non-reasoning"
         modelLabel: "grok-4-fast-non-reasoning"
+    # Video 系列
+    - name: "Video · Veo 3.1 Ref-to-Video · Google"
+      label: "[視頻] Veo 3.1 參考圖生成視頻 - Google"
+      iconURL: "video"
+      description: "根據參考圖片生成高品質視頻，適合創意製作"
+      preset:
+        endpoint: "AIMLAPI"
+        model: "google/veo-3.1-reference-to-video"
+        modelLabel: "veo-3.1-reference-to-video"
+    - name: "Video · Veo 3.1 First-Last-Image-to-Video · Google"
+      label: "[視頻] Veo 3.1 首尾圖生成視頻 - Google"
+      iconURL: "video"
+      description: "根據首尾圖片生成連貫視頻，適合故事場景"
+      preset:
+        endpoint: "AIMLAPI"
+        model: "google/veo-3.1-first-last-image-to-video"
+        modelLabel: "veo-3.1-first-last-image-to-video"
+    - name: "Video · Veo 3.1 First-Last-Image-to-Video Fast · Google"
+      label: "[視頻] Veo 3.1 首尾圖生成視頻（快速）- Google"
+      iconURL: "video"
+      description: "快速生成首尾圖視頻，適合即時預覽"
+      preset:
+        endpoint: "AIMLAPI"
+        model: "google/veo-3.1-first-last-image-to-video-fast"
+        modelLabel: "veo-3.1-first-last-image-to-video-fast"
+    - name: "Video · Veo 3.1 Text-to-Video · Google"
+      label: "[視頻] Veo 3.1 文生視頻 - Google"
+      iconURL: "video"
+      description: "根據文本描述生成高品質視頻，適合多場景"
+      preset:
+        endpoint: "AIMLAPI"
+        model: "google/veo-3.1-text-to-video"
+        modelLabel: "veo-3.1-text-to-video"
+    - name: "Video · Veo 3.1 Text-to-Video Fast · Google"
+      label: "[視頻] Veo 3.1 文生視頻（快速）- Google"
+      iconURL: "video"
+      description: "快速生成文本視頻，適合即時預覽"
+      preset:
+        endpoint: "AIMLAPI"
+        model: "google/veo-3.1-text-to-video-fast"
+        modelLabel: "veo-3.1-text-to-video-fast"
+    - name: "Video · Kling v2.1 Master Text-to-Video · KlingAI"
+      label: "[視頻] Kling v2.1 文生視頻 - KlingAI"
+      iconURL: "video"
+      description: "根據文本生成視頻，支持多種風格"
+      preset:
+        endpoint: "AIMLAPI"
+        model: "klingai/v2.1-master-text-to-video"
+        modelLabel: "v2.1-master-text-to-video"
+    - name: "Video · Kling v2.1 Master Image-to-Video · KlingAI"
+      label: "[視頻] Kling v2.1 圖生視頻 - KlingAI"
+      iconURL: "video"
+      description: "根據圖片生成視頻，適合創意設計"
+      preset:
+        endpoint: "AIMLAPI"
+        model: "klingai/v2.1-master-image-to-video"
+        modelLabel: "v2.1-master-image-to-video"
+    - name: "Video · Kling v2.5 Turbo Pro Text-to-Video · KlingAI"
+      label: "[視頻] Kling v2.5 Turbo Pro 文生視頻 - KlingAI"
+      iconURL: "video"
+      description: "高效文生視頻，適合大批量生成"
+      preset:
+        endpoint: "AIMLAPI"
+        model: "klingai/v2.5-turbo-pro-text-to-video"
+        modelLabel: "v2.5-turbo-pro-text-to-video"
+    - name: "Video · Seedance 1.0 Pro T2V · ByteDance"
+      label: "[視頻] Seedance 1.0 Pro 文生視頻 - ByteDance"
+      iconURL: "video"
+      description: "根據文本生成高品質視頻，適合多場景"
+      preset:
+        endpoint: "AIMLAPI"
+        model: "bytedance/seedance-1-0-pro-t2v"
+        modelLabel: "seedance-1-0-pro-t2v"
+    - name: "Video · Seedance 1.0 Pro I2V · ByteDance"
+      label: "[視頻] Seedance 1.0 Pro 圖生視頻 - ByteDance"
+      iconURL: "video"
+      description: "根據圖片生成高品質視頻，適合創意製作"
+      preset:
+        endpoint: "AIMLAPI"
+        model: "bytedance/seedance-1-0-pro-i2v"
+        modelLabel: "seedance-1-0-pro-i2v"
