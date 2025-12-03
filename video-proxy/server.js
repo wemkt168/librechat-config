@@ -1,10 +1,10 @@
 const express = require("express");
 const axios = require("axios");
 const dotenv = require("dotenv");
+
 const express = require("express");
 const axios = require("axios");
 const dotenv = require("dotenv");
-
 dotenv.config();
 const app = express();
 const port = process.env.PORT || 8080;
