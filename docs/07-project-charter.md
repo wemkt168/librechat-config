@@ -60,10 +60,14 @@
 #### 2. Zeabur Project: `librechat-config`
 **用途**：后端代理服务和配置服务
 
-| 服务名称 | 功能 | 状态 | 代码位置 | GitHub 目录 |
-|---------|------|------|---------|------------|
-| LibreChat Config Proxy | 配置代理服务，从 GitHub 拉取 librechat.yaml | ✅ 运行中 | proxy-config/ | `proxy-config/` |
-| Video Proxy | 视频生成代理服务，代理 AIMLAPI 的 `/v2/video/generations` 接口 | 🚧 待部署 | video-proxy/ | `video-proxy/` |
+| 服务名称（Zeabur） | 功能 | 状态 | 代码位置 | GitHub 目录 |
+|-------------------|------|------|---------|------------|
+| `proxy-config` | 配置代理服务，从 GitHub 拉取 librechat.yaml | ✅ 运行中 | proxy-config/ | `proxy-config/` |
+| `video-proxy` | 视频生成代理服务，代理 AIMLAPI 的 `/v2/video/generations` 接口 | 🚧 待部署 | video-proxy/ | `video-proxy/` |
+
+**⚠️ 重要：服务名称必须等于目录名称！**
+- 目录 `proxy-config/` → 服务名必须是 `proxy-config`（不是 `librechat-config`）
+- 目录 `video-proxy/` → 服务名必须是 `video-proxy`
 
 **环境变量**（Video Proxy）：
 - `AI_ML_API_KEY`：AIMLAPI 密钥（与 LibreChat UI 相同）
@@ -77,9 +81,14 @@
    - `librechat` 项目：只放前端 UI 服务
    - `librechat-config` 项目：放所有后端代理服务
 
-2. **服务命名规范**：
+2. **服务命名规范**（⚠️ 关键！）：
    - 每个服务都有独立的目录（如 `video-proxy/`、`proxy-config/`）
-   - 服务名称 = 目录名称
+   - **服务名称必须等于目录名称**（在 Zeabur 中创建服务时，服务名必须和目录名一致）
+   - **禁止使用项目名作为服务名**（例如：不能把 `proxy-config` 服务命名为 `librechat-config`）
+   - 示例：
+     - ✅ 正确：目录 `proxy-config/` → 服务名 `proxy-config`
+     - ✅ 正确：目录 `video-proxy/` → 服务名 `video-proxy`
+     - ❌ 错误：目录 `proxy-config/` → 服务名 `librechat-config`（会和项目名混淆）
 
 3. **代码组织规范**：
    - 所有代码都在 GitHub 仓库 `wemkt168/librechat-config` 中
@@ -122,11 +131,17 @@ librechat-config/
 GitHub 仓库 (wemkt168/librechat-config)
     ↓
     ├── proxy-config/  →  Zeabur Project: librechat-config
-    │                     服务: LibreChat Config Proxy
+    │                     服务名: proxy-config（⚠️ 不是 librechat-config）
     │
     └── video-proxy/   →  Zeabur Project: librechat-config
-                          服务: Video Proxy
+                          服务名: video-proxy
 ```
+
+**⚠️ 命名规范提醒**：
+- Zeabur 项目名：`librechat-config`
+- 服务名：`proxy-config`（对应 `proxy-config/` 目录）
+- 服务名：`video-proxy`（对应 `video-proxy/` 目录）
+- **服务名绝对不能和项目名重复！**
 
 ### 部署规范
 
