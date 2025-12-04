@@ -1,0 +1,21 @@
+{
+  "services": {
+    "video-proxy": {
+      "root": "video-proxy",
+      "build": {
+        "builder": "nodejs"
+      },
+      "ports": [
+        {
+          "port": 8080,
+          "type": "http"
+        }
+      ],
+      "env": {
+        "PORT": "8080"
+      }
+    }
+  }
+}
+
+
