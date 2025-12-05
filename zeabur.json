@@ -12,8 +12,7 @@
         }
       ],
       "env": {
-        "PORT": "8080",
-        "AI_ML_API_KEY": "<your-aimlapi-key>"
+        "PORT": "8080"
       }
     }
   }
