@@ -35,8 +35,10 @@
 - `CONFIG_PATH`：LibreChat 配置路径（GitHub Raw URL）
 
 ### Video Proxy
-- `AI_ML_API_KEY`：AIMLAPI 密钥（与 LibreChat UI 相同）
+- `AI_ML_API_KEY`：AIMLAPI 密钥（可以与 LibreChat UI 相同，也可以使用不同的 Key）
 - `PORT`：服务监听端口（默认 8080）
+
+**注意**：不同服务可以使用不同的 API Key，不会造成运行影响。详见 `docs/14-api-key-management-strategy.md`
 
 ## 重要链接
 - **GitHub 仓库**：https://github.com/wemkt168/librechat-config
