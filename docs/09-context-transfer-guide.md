@@ -87,32 +87,41 @@
 
 #### 问题：Video-Proxy 401 错误
 - **现象**：
-  - 健康检查正常（GET / 返回 200）
-  - 视频生成接口返回 401（POST /video/generate）
-  - Runtime Logs 为空（无法查看日志）
-- **可能原因**：
-  1. 环境变量 `AI_ML_API_KEY` 值不正确或为空
-  2. 环境变量格式有问题（多余空格、引号等）
-  3. 服务未重启，未读取新的环境变量
-  4. API Key 本身无效或已过期
+  - 健康检查正常（GET / 返回 200）✅
+  - 视频生成接口返回 401（POST /video/generate）❌
+  - Runtime Logs 为空（无法查看日志）⚠️
+- **诊断结果**（2025-12-05）：
+  - ✅ Postman 测试完成：健康检查正常，视频生成接口 401
+  - ✅ Zeabur 诊断完成：提供了详细的手动操作步骤
+  - 📋 完整诊断报告：`docs/13-401-error-diagnosis-complete.md`
+- **可能原因**（按概率排序）：
+  1. 环境变量未正确加载（60%）- 格式错误、未重启
+  2. API Key 格式错误或无效（25%）- 隐藏字符、过期、权限不足
+  3. 代码中 API Key 读取逻辑错误（10%）
+  4. 请求头格式错误（5%）
 - **已尝试**：
   - ✅ 添加调试日志
   - ✅ 修复 zeabur.json 占位符
   - ✅ 确认环境变量已配置
-- **待验证**：
-  - ⏳ 使用 Command 面板验证环境变量（`echo $AI_ML_API_KEY`）
-  - ⏳ 重启服务后查看 Runtime Logs
-  - ⏳ 确认 API Key 值是否正确
+  - ✅ 完成 Postman 测试
+  - ✅ 完成 Zeabur 诊断
+- **下一步操作**（优先级）：
+  1. **立即**：重置环境变量（删除后重新添加，确保格式正确）
+  2. **立即**：重启服务
+  3. **立即**：使用 Command 面板验证环境变量（`echo $AI_ML_API_KEY`）
+  4. **立即**：查看 Runtime Logs（重启后应该有日志输出）
+  5. **如果还是 401**：验证 API Key 在 AIMLAPI 平台的有效性
 
 ### 下一步工作（优先级）
-1. **立即**：诊断 401 错误
-   - 使用 Command 面板验证环境变量
-   - 重启服务并查看 Runtime Logs
-   - 确认 API Key 值是否正确
+1. **立即**：修复 401 错误
+   - 重置环境变量（删除后重新添加，确保格式正确）
+   - 重启服务
+   - 使用 Command 面板验证环境变量（`echo $AI_ML_API_KEY`）
+   - 查看 Runtime Logs（重启后应该有日志输出）
+   - 如果还是 401，验证 API Key 在 AIMLAPI 平台的有效性
 2. **短期**：完成视频生成接口测试
-   - 修复 401 错误
-   - 测试视频生成功能
-   - 验证功能正常
+   - 修复 401 错误后重新测试
+   - 验证视频生成功能正常
 3. **中期**：建立 Image/Code 代理服务
 
 ### 重要规则
@@ -137,6 +146,7 @@
 - `docs/02-decisions.md` - 决策记录
 - `docs/10-project-complete-info.md` - 项目完整信息
 - `docs/12-current-issue-401-error.md` - 当前 401 错误问题追踪
+- `docs/13-401-error-diagnosis-complete.md` - 完整诊断报告（包含 Postman 和 Zeabur 反馈）
 - `docs/diagnose-video-proxy-401-complete.md` - 完整诊断指南
 
 ### 部署指令

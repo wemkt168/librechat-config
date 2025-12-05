@@ -76,21 +76,39 @@
 ### 🚧 进行中
 
 #### Video-Proxy 服务部署
-- **状态**：代码已准备，等待部署
+- **状态**：✅ 已成功部署到 Zeabur，⚠️ 遇到 401 错误
+- **部署信息**：
+  - Project：`librechat-config`
+  - Service：`video-proxy`
+  - 域名：`https://video-proxy-wemkt.zeabur.app`
+  - 健康检查：✅ 正常（返回 "Video proxy is running..."）
+  - 环境变量：✅ 已配置（PORT=8080, AI_ML_API_KEY）
+- **问题**：
+  - ❌ 视频生成接口返回 401 Unauthorized
+  - ❌ Runtime Logs 为空（无法查看日志）
+  - ⚠️ 可能原因：环境变量未正确加载或 API Key 无效
+- **诊断结果**：
+  - ✅ Postman 测试完成（健康检查正常，视频生成接口 401）
+  - ✅ Zeabur 诊断完成（提供了详细的手动操作步骤）
+  - 📋 完整诊断报告：`docs/13-401-error-diagnosis-complete.md`
 - **下一步**：
-  1. 部署到 GitHub 仓库（wemkt168/librechat-config）
-  2. 部署到 Zeabur（librechat-config Project）
-  3. 测试视频生成接口
+  1. ✅ 部署到 GitHub 仓库（已完成）
+  2. ✅ 部署到 Zeabur（已完成）
+  3. ⏳ 修复 401 错误（重置环境变量，验证 API Key）
+  4. ⏳ 测试视频生成接口（POST /video/generate）
 
 ### 📋 待办
 
 #### 短期（本周）
 - [x] 部署 video-proxy 到 GitHub（已完成，commit: c13c340）
 - [x] 完善 proxy-config 文档（已完成，commit: a146dbf）
-- [x] 创建项目宪章和全局开发规范（已完成，待提交）
-- [ ] 提交项目宪章和全局开发规范到 GitHub
-- [ ] 部署 video-proxy 到 Zeabur
-- [ ] 测试视频生成接口（POST /video/generate）
+- [x] 创建项目宪章和全局开发规范（已完成，已提交）
+- [x] 修复命名冲突问题（服务名必须等于目录名）
+- [x] 部署 video-proxy 到 Zeabur（已完成，2025-12-05）
+  - 域名：https://video-proxy-wemkt.zeabur.app
+  - 环境变量：PORT=8080, AI_ML_API_KEY 已配置
+- [x] 测试视频生成接口（POST /video/generate）- 返回 401，已诊断
+- [ ] 修复 401 错误（重置环境变量，验证 API Key）
 - [ ] 验证视频生成功能是否正常工作
 
 #### 中期（本月）
