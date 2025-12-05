@@ -50,34 +50,75 @@
 
 ---
 
-## 📝 当前项目状态摘要（2025-12-05 01:08）
+## 📝 当前项目状态摘要（2025-12-05 最新）
 
 ### 项目信息
 - **项目名称**：AI聚合器（LibreChat Config）
 - **GitHub 仓库**：wemkt168/librechat-config
 - **Zeabur 项目**：
-  - `librechat`：前端 UI 服务
-  - `librechat-config`：后端代理服务
+  - `librechat`：前端 UI 服务（LibreChat UI）
+  - `librechat-config`：后端代理服务（proxy-config + video-proxy）
 
-### 最近完成的工作
-1. ✅ Video-Proxy 代码准备（已部署到 GitHub，commit: c13c340）
-2. ✅ Proxy-Config 文档完善（已部署到 GitHub，commit: a146dbf）
-3. ✅ 项目宪章和全局开发规范建立
-4. ✅ 修复 video-proxy/server.js 重复代码问题（commit: c06c55b）
+### 最近完成的工作（2025-12-05）
+1. ✅ 修复命名冲突问题（服务名必须等于目录名）
+   - 将 `librechat-config` 服务重命名为 `proxy-config`
+   - 明确命名规范：服务名 = 目录名
+2. ✅ Video-Proxy 服务部署到 Zeabur
+   - 服务名：`video-proxy`
+   - 域名：`https://video-proxy-wemkt.zeabur.app`
+   - 健康检查：✅ 正常（返回 "Video proxy is running..."）
+   - 构建类型：✅ 已识别为 Node.js（通过 zbpack.json + nixpacks.toml）
+3. ✅ 修复 zeabur.json 占位符问题
+   - 移除 `"AI_ML_API_KEY": "<your-aimlapi-key>"` 占位符
+   - 环境变量应在 Zeabur 控制台手动配置
+4. ✅ 添加调试日志到 server.js
+   - 记录 API Key 加载状态
+   - 记录请求处理过程
 
 ### 当前状态
 - **Video-Proxy**：
-  - GitHub：✅ 已部署（代码已修复）
-  - Zeabur：⏳ 等待部署（用户在手动操作，遇到工作目录设置问题）
+  - GitHub：✅ 已部署（最新 commit: 9cf7929）
+  - Zeabur：✅ 已部署并运行
+  - 健康检查：✅ 正常
+  - 环境变量：✅ 已配置（PORT=8080, AI_ML_API_KEY）
+  - **问题**：⚠️ 视频生成接口返回 401 Unauthorized
 
-### 下一步工作
-1. 完成 video-proxy 部署到 Zeabur
-2. 测试视频生成接口
-3. 验证功能
+### 🚨 当前遇到的问题
+
+#### 问题：Video-Proxy 401 错误
+- **现象**：
+  - 健康检查正常（GET / 返回 200）
+  - 视频生成接口返回 401（POST /video/generate）
+  - Runtime Logs 为空（无法查看日志）
+- **可能原因**：
+  1. 环境变量 `AI_ML_API_KEY` 值不正确或为空
+  2. 环境变量格式有问题（多余空格、引号等）
+  3. 服务未重启，未读取新的环境变量
+  4. API Key 本身无效或已过期
+- **已尝试**：
+  - ✅ 添加调试日志
+  - ✅ 修复 zeabur.json 占位符
+  - ✅ 确认环境变量已配置
+- **待验证**：
+  - ⏳ 使用 Command 面板验证环境变量（`echo $AI_ML_API_KEY`）
+  - ⏳ 重启服务后查看 Runtime Logs
+  - ⏳ 确认 API Key 值是否正确
+
+### 下一步工作（优先级）
+1. **立即**：诊断 401 错误
+   - 使用 Command 面板验证环境变量
+   - 重启服务并查看 Runtime Logs
+   - 确认 API Key 值是否正确
+2. **短期**：完成视频生成接口测试
+   - 修复 401 错误
+   - 测试视频生成功能
+   - 验证功能正常
+3. **中期**：建立 Image/Code 代理服务
 
 ### 重要规则
 - **任务状态确认**：给出指令后，必须等待用户明确反馈才能标记为"已完成"
 - **项目宪章**：所有操作必须遵循 `docs/07-project-charter.md`
+- **命名规范**：服务名必须等于目录名（⚠️ 关键！）
 - **代码质量**：我写代码，AI IDE 执行
 
 ---
@@ -94,6 +135,9 @@
 - `docs/08-global-development-standards.md` - 全局开发规范
 - `docs/04-collaboration-log.md` - 协作记录
 - `docs/02-decisions.md` - 决策记录
+- `docs/10-project-complete-info.md` - 项目完整信息
+- `docs/12-current-issue-401-error.md` - 当前 401 错误问题追踪
+- `docs/diagnose-video-proxy-401-complete.md` - 完整诊断指南
 
 ### 部署指令
 - `docs/deployment-zeabur.md` - 部署到 Zeabur 的指令
@@ -112,10 +156,13 @@
 
 ### 当前进行中的任务
 
-- **Video-Proxy 部署到 Zeabur**：
-  - 状态：用户正在手动操作
-  - 问题：Zeabur 检测为 "static" 而不是 "Node.js"
-  - 解决方案：已设置根目录为 `video-proxy`，等待重新检测或手动选择构建类型
+- **Video-Proxy 401 错误诊断**：
+  - 状态：等待诊断
+  - 问题：视频生成接口返回 401 Unauthorized
+  - 服务状态：Running，健康检查正常
+  - 环境变量：已配置（PORT=8080, AI_ML_API_KEY）
+  - Runtime Logs：为空（无法查看）
+  - 下一步：使用 Command 面板验证环境变量，重启服务查看日志
 
 ---
 
@@ -152,5 +199,5 @@
 
 ---
 
-**最后更新**：2025-12-05 01:08
+**最后更新**：2025-12-05（Video-Proxy 已部署，遇到 401 错误）
 
