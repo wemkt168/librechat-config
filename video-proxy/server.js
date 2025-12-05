@@ -9,6 +9,8 @@ const port = process.env.PORT || 8080;
 const AIMLAPI_KEY = process.env.AI_ML_API_KEY;
 if (!AIMLAPI_KEY) {
   console.warn("Missing AI_ML_API_KEY env var, video proxy will not work correctly.");
+} else {
+  console.log("[video-proxy] AI_ML_API_KEY loaded, length:", AIMLAPI_KEY.length, "prefix:", AIMLAPI_KEY.substring(0, 15) + "...");
 }
 
 app.use(express.json());
@@ -29,6 +31,16 @@ app.post("/video/generate", async (req, res) => {
 
     // Debug logs: what we收到 & 转发
     console.log("[video-proxy] Incoming request body:", JSON.stringify(payload, null, 2));
+
+    // Debug: Log API Key status before making request
+    if (!AIMLAPI_KEY) {
+      console.error("[video-proxy] ERROR: AI_ML_API_KEY is missing!");
+      return res.status(500).json({
+        error: "Server configuration error: AI_ML_API_KEY not set"
+      });
+    }
+
+    console.log("[video-proxy] Making request to AIMLAPI with API Key (length:", AIMLAPI_KEY.length, ")");
 
     const response = await axios.post(
       "https://api.aimlapi.com/v2/video/generations",
